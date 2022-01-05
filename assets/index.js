@@ -1,43 +1,82 @@
 // TODO: Include packages needed for this application
+const inquirer = require('inquirer');
+const Choices = require('inquirer/lib/objects/choices');
+const fs = require('fs');
 
 // TODO: Create an array of questions for user input
-const questions = [
+inquirer
+  .prompt([
     {
-    title: "What is the name of your project?",},
+      type: 'input',
+      message: 'What is your name?',
+      name: 'personName',
+    },
     {
-    gitHubName: "What is your Git Hub user name?",},
+      type: "input",
+      message: "What is the name of your project?",
+      name: "projectName",
+    },
     {
-    projectDescription: "Please Desribe your project.",},
-    
-];
+      type: 'list',
+      message: 'Which license would you like to use?',
+      name: "licenses",
+      choices: ["MIT", "The Unlicense", "ISC", "Artist License 2.0", "Apache License 2.0"],
+    },
+    {
+      type: 'input',
+      message: 'What is your GitHub username?',
+      name: 'gitUserName',
+    },
+    {
+      type: 'input',
+      message: 'Please describe your project.',
+      name: 'projectDescript',
+    },
+    {
+      type: 'input',
+      message: 'Please provide installation instruction.',
+      name: 'installGuide',
+    },
+    {
+      type: 'input',
+      message: 'Please provide how someone may contribute.',
+      name: 'contributions',
+    },
+    {
+      type: 'input',
+      message: 'How is the application used?',
+      name: 'usage',
+    },
+    {
+      type: 'input',
+      message: 'How was your application tested?',
+      name: 'tested',
+    },
+    {
+      type: 'input',
+      message: 'What is your email address?',
+      name: 'questions',
+    },
+  ])
+  .then((response) => {
+    console.log(response);
+    const fileName = `${response.projectName.toLowerCase().split(' ').join('')}.md`;
+
+    fs.appendFile(fileName, JSON.stringify(response),
+      (err) => err ? console.log(error) : console.log(response))
+  });
+
+
+
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) { }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() { }
 
 // Function call to initialize app
 init();
 
 
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  return `# ${data.title}
-
-`;
-}
-
-module.exports = generateMarkdown;
