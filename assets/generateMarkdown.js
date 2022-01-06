@@ -1,6 +1,5 @@
 const index = require('./index.js')
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+
 function renderLicenseBadge(data) {
     if (data.license === "MIT") {
         return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
@@ -73,9 +72,9 @@ function generateMarkdown(data) {
 ## Credits
 
 ## License
-        -  ${licenseSection}
+  ${licenseSection}
 ## Badges
-        - ${licenseBadge}
+ ${licenseBadge}
 ## Features
 
 ## How to Contribute
@@ -84,8 +83,8 @@ function generateMarkdown(data) {
         - ${data.tested}
 ## Questions
         - Please direct questions to ${data.email}    
-        - GitHub  https://github.com/${data.gitUserName} 
-`;
+        - GitHub  https://www.github.com/${data.gitUserName} `
+        ;
 }
 
 module.exports = generateMarkdown;
