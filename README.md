@@ -1,7 +1,8 @@
 # ReadMe Generator [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-        - This project allows users to generate a high quality readmethrough a number of prompts.  The end product is a readme.md file that you can attach to your projects.
+  - This project allows users to generate a high quality readmethrough a number of prompts.  The end product is a readme.md file that you can attach to your projects.
+  - Some of the hurdles I had to overcome on this project were not with the coding but with the funcitonality.  I noticed during the testing phase that I would have to add, commit, and close VS Code after each test generated a README.md and delete that file before running another test. 
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
@@ -13,7 +14,8 @@
 ## Usage
         - This application is ran in the terminal.
 ## Screenshot
-
+![Screenshot](assets/images/programRan.png)
+![Screenshot](assets/images/terminal.png)
 ## Credits
 
 ## License
@@ -29,7 +31,7 @@
 ## Features
 
 ## How to Contribute
-        - Please contact me via my email or GitHub accounts, listed below.
+        - Please contact me via my email or GitHub account, listed below.
 ## Tests
         - I tested this application at milestones.
 ## Questions
