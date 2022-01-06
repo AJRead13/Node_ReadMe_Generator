@@ -13,6 +13,7 @@
         - This requires the installation of the inquirer npm.
 ## Usage
         - This application is ran in the terminal.
+        - Link to usage videos - https://drive.google.com/drive/folders/12Fpj7fnGUreXc9_E2pooQ0mVoBIOQAFX?usp=sharing
 ## Screenshot
 ![Screenshot](assets/images/programRan.png)
 ![Screenshot](assets/images/terminal.png)
