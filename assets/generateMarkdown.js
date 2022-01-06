@@ -84,7 +84,7 @@ function generateMarkdown(data) {
         - ${data.tested}
 ## Questions
         - Please direct questions to ${data.email}    
-        - github.com/${data.gitUserName} 
+        - GitHub  https://github.com/${data.gitUserName} 
 `;
 }
 
