@@ -2,6 +2,7 @@
 const inquirer = require('inquirer');
 const Choices = require('inquirer/lib/objects/choices');
 const fs = require('fs');
+const generateMarkdown = require('./generateMarkdown.js')
 
 // TODO: Create an array of questions for user input
 inquirer
@@ -20,7 +21,7 @@ inquirer
       type: 'list',
       message: 'Which license would you like to use?',
       name: "licenses",
-      choices: ["MIT", "The Unlicense", "ISC", "Artist License 2.0", "Apache License 2.0"],
+      choices: ["MIT", "ISC", "Artist License 2.0", "Apache License 2.0"],
     },
     {
       type: 'input',
@@ -60,7 +61,7 @@ inquirer
   ])
   .then((response) => {
     console.log(response);
-    const fileName = `${response.projectName.toLowerCase().split(' ').join('')}.md`;
+    const fileName = `README.md`;
 
     fs.appendFile(fileName, JSON.stringify(response),
       (err) => err ? console.log(error) : console.log(response))
@@ -73,7 +74,15 @@ inquirer
 function writeToFile(fileName, data) { }
 
 // TODO: Create a function to initialize app
-function init() { }
+function init() {
+  inquirer
+    .prompt(questions)
+    .then((response) => {
+      console.log(response);
+      const markdown = generateMarkdown(response);
+      const fileName = `${}`
+    })
+ }
 
 // Function call to initialize app
 init();
